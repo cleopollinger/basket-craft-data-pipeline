@@ -6,11 +6,18 @@
 5. Write DataFrame to products table in Postgres. (raw schema)
 
 """
-# %%
 import pandas as pd
 from sqlalchemy import create_engine
+
+"""
 import os
 from dotenv import load_dotenv
+
+"""
+
+
+"""
+
 
 # %%
 # load enviornment variables from dotenv file
@@ -62,3 +69,5 @@ df.to_sql('products', pg_engine, schema = 'raw', if_exists = 'replace', index=Fa
 
 print(f'{len(df)} records loaded into Postgres products table.')
 # %%
+
+"""
