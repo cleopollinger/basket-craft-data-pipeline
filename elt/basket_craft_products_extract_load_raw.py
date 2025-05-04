@@ -1,3 +1,4 @@
+
 """
 1. Import necessary libraries. 
 2. Load source MySQL and destination Postgres connection details
@@ -6,18 +7,11 @@
 5. Write DataFrame to products table in Postgres. (raw schema)
 
 """
+#%%
 import pandas as pd
 from sqlalchemy import create_engine
-
-"""
 import os
 from dotenv import load_dotenv
-
-"""
-
-
-"""
-
 
 # %%
 # load enviornment variables from dotenv file
@@ -25,8 +19,6 @@ load_dotenv()
 
 #%%
 os.environ['MYSQL_USER']
-
-
 
 #%%
 # MySQL database connection details
@@ -40,6 +32,19 @@ pg_user = os.environ['PG_USER']
 pg_password = os.environ['PG_PASSWORD']
 pg_host = os.environ['PG_HOST']
 pg_db = os.environ['PG_DB']
+
+#%%
+pg_db
+
+# Load environment variables from the .env file
+load_dotenv()
+
+# Access the environment variables
+mysql_user = os.environ.get('MYSQL_USER')
+mysql_password = os.environ.get('MYSQL_PASSWORD')
+mysql_host = os.environ.get('MYSQL_HOST')
+
+print(mysql_user, mysql_password, mysql_host)  # Just to confirm it's working
 
 
 # %%
@@ -59,15 +64,13 @@ df = pd.read_sql('SELECT * FROM products', mysql_engine)
 
 
 #%%
-df 
+#df 
 # %%
 # Write DataFrame
 df.to_sql('products', pg_engine, schema = 'raw', if_exists = 'replace', index=False)
 
 
 # %%
-
 print(f'{len(df)} records loaded into Postgres products table.')
-# %%
 
-"""
+# %%
