@@ -60,6 +60,4 @@ df.to_sql('orders', pg_engine, schema = 'raw', if_exists = 'replace', index=Fals
 
 
 # %%
-
 print(f'{len(df)} records loaded into Postgres orders table.')
-# %%
