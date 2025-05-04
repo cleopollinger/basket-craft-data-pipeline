@@ -1,3 +1,4 @@
+version: 2
 models:
   - name: stg_orders
     description: Staging model for orders
@@ -7,7 +8,12 @@ models:
         tests:
           - unique
           - not_null
-      - name: order_name
-        tests:
-          - not_null
-      - name: created_at
+      - name: order_created_at
+      - name: order_session_id
+      - name: order_user_id
+      - name: order_primary_product_id
+      - name: order_items_purchased
+      - name: order_price_usd
+      - name: order_cogs_usd
+      - name: loaded_at
+      
