@@ -6,9 +6,9 @@ stg_products AS (
    SELECT
        product_id,
        created_at,
-       description AS product_description, – added product_ prefix
+       description AS product_description, -- added product_ prefix
        product_name,
-       CURRENT_TIMESTAMP AS loaded_at – for auditing and debugging
+       CURRENT_TIMESTAMP AS loaded_at -- for auditing and debugging
    FROM raw_products
 )
 SELECT *

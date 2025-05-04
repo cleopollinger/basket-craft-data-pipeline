@@ -6,9 +6,9 @@ stg_orders AS (
    SELECT
        order_id,
        created_at,
-       description AS order_description, – added order_ prefix
+       descriptions AS order_description, -- added order_ prefix
        order_name,
-       CURRENT_TIMESTAMP AS loaded_at – for auditing and debugging
+       CURRENT_TIMESTAMP AS loaded_at -- for auditing and debugging
    FROM raw_orders
 )
 SELECT *
