@@ -1,0 +1,13 @@
+models:
+  - name: stg_orders
+    description: Staging model for orders
+    columns:
+      - name: order_id
+        description: Unique identifier for each order
+        tests:
+          - unique
+          - not_null
+      - name: order_name
+        tests:
+          - not_null
+      - name: created_at
