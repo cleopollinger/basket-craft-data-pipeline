@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: fct_orders_product_daily
+    description: >
+      Daily aggregated order and financial metrics for each product,
+      sourced from the stg_orders model.
+    columns:
+      - name: order_day
+        description: The date on which the orders occurred.
+
+      - name: product_id
+        description: The primary product associated with the order.
+
+      - name: total_orders
+        description: Number of distinct orders made for the product on a given day.
+
+      - name: total_items_purchased
+        description: Total quantity of items purchased for the product on a given day.
+
+      - name: total_revenue_usd
+        description: Total revenue in USD generated from the product on a given day.
+
+      - name: total_cost_usd
+        description: Total cost in USD (COGS) associated with the product on a given day.
+
+      - name: total_profit_usd
+        description: Profit in USD (revenue - cost) generated from the product on a given day.
+
+      - name: avg_order_value_usd
+        description: Average value of each order for the product in USD.
+
+      - name: unique_customers_count
+        description: Number of distinct users who placed orders for the product.
+
+      - name: unique_sessions_count
+        description: Number of distinct sessions during which the product was ordered.
+
+      - name: avg_items_per_order
+        description: Average number of items purchased per order.
+
+      - name: profit_margin_pct
+        description: Profit margin percentage calculated as profit divided by revenue.
+
+      - name: loaded_at
+        description: Timestamp when the data was loaded or transformed.

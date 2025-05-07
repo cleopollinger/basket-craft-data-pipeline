@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: fct_website_sessions_utm_source_daily
+    description: >
+      Daily fact table aggregating website session metrics by UTM source,
+      including repeat session counts and percentages.
+    columns:
+      - name: website_session_day
+        description: The date of the website sessions.
+
+      - name: utm_source
+        description: UTM source used in the session (e.g., google, facebook, etc.).
+
+      - name: sessions
+        description: Total number of website sessions for the given day and UTM source.
+
+      - name: repeat_sessions
+        description: Number of repeat sessions for the given day and UTM source.
+
+      - name: repeat_sessions_pct
+        description: Percentage of sessions that are repeat sessions.
+
+      - name: loaded_at
+        description: Timestamp indicating when the data was loaded or transformed.
