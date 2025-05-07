@@ -7,7 +7,7 @@ dim_products AS (
        product_name,
        product_description,
        created_at,
-       CURRENT_TIMESTAMP AS loaded_at
+       CURRENT_TIMESTAMP AS dbt_updated_at
    FROM stg_products
 )
 SELECT * FROM dim_products
