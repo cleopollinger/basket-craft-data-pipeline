@@ -1,0 +1,22 @@
+
+dbt_basket_craft:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: "{{ env_var('DBT_BASKET_CRAFT_DEV_HOST') }}"
+      user: "{{ env_var('DBT_BASKET_CRAFT_DEV_USER') }}"
+      password: "{{ env_var('DBT_BASKET_CRAFT_DEV_PASSWORD') }}"
+      port: 5432
+      dbname: "{{ env_var('DBT_BASKET_CRAFT_DEV_DBNAME') }}"
+      schema: "{{ env_var('DBT_BASKET_CRAFT_DEV_SCHEMA') }}"
+      threads: "{{ env_var('DBT_BASKET_CRAFT_DEV_THREADS', default=4) | int }}"
+    prod:
+      type: postgres
+      host: "{{ env_var('DBT_BASKET_CRAFT_PROD_HOST') }}"
+      user: "{{ env_var('DBT_BASKET_CRAFT_PROD_USER') }}"
+      password: "{{ env_var('DBT_BASKET_CRAFT_PROD_PASSWORD') }}"
+      port: 5432
+      dbname: "{{ env_var('DBT_BASKET_CRAFT_PROD_DBNAME') }}"
+      schema: "{{ env_var('DBT_BASKET_CRAFT_PROD_SCHEMA') }}"
+      threads: "{{ env_var('DBT_BASKET_CRAFT_PROD_THREADS', default=8) | int }}"

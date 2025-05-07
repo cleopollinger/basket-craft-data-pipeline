@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: dim_products
+    description: "Dimension table for products, derived from stg_products."
+    columns:
+      - name: product_id
+        description: "Unique identifier for the product."
+        tests:
+          - not_null
+          - unique
+      - name: product_name
+        description: "Name of the product."
+      - name: product_description
+        description: "Detailed description of the product."
+      - name: created_at
+        description: "Timestamp when the product was created."
+      - name: dbt_updated_at
+        description: "Timestamp when the dbt model was last updated."
